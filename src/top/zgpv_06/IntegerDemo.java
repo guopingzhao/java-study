@@ -13,5 +13,11 @@ public class IntegerDemo {
         Integer num1 = new Integer("1213");
 
         System.out.println(num + ", " + num1);
+
+
+        Integer i = 100;
+        Integer ii = i * 2;
+
+        System.out.println(ii);
     }
 }
