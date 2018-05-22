@@ -16,5 +16,6 @@ public class SystemDemo {
         System.arraycopy(arr, 1, arr2, 2, 2);
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(arr2));
+
     }
 }
