@@ -2,13 +2,15 @@ package top.zgpv.test;
 
 import top.zgpv.dao.UserDao;
 import top.zgpv.dao.impl.UserDaoImpl;
+import top.zgpv.exception.DuplicationOfRegistrationException;
 import top.zgpv.game.GuessNumber;
 import top.zgpv.pojo.User;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class UserTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         while (true) {
             System.out.println("---------------欢迎光临----------------");
             System.out.println("1 登录");
@@ -19,7 +21,7 @@ public class UserTest {
             Scanner sc = new Scanner(System.in);
             String choiceString = sc.nextLine();
             UserDao userDao = new UserDaoImpl();
-
+            choice :
             switch (choiceString) {
                 case "1":
                     System.out.println("---------------登录界面----------------");
@@ -44,8 +46,13 @@ public class UserTest {
                 case "2":
                     System.out.println("---------------注册界面----------------");
                     User registerUser = inputUserInfo(sc);
-                    userDao.registry(registerUser);
-                    System.out.println("注册成功，欢迎使用！");
+                    try {
+                        userDao.registry(registerUser);
+                        System.out.println("注册成功，欢迎使用！");
+                    } catch (DuplicationOfRegistrationException e) {
+                        e.printStackTrace();
+                        System.out.println("用户已存在！请重新输入!");
+                    }
                     break;
                 case "3":
                 default:
