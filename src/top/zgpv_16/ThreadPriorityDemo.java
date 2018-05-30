@@ -19,6 +19,7 @@ public class ThreadPriorityDemo {
         t2.setPriority(Thread.MIN_PRIORITY);
         t3.setPriority(Thread.MAX_PRIORITY);
 
+
         t1.start();
         t2.start();
         t3.start();

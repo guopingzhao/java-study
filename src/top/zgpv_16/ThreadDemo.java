@@ -19,10 +19,3 @@ public class ThreadDemo {
     }
 }
 
-class ThreadChild extends Thread {
-    @Override
-    public void run() {
-        for (int x = 0; x < 1000000000; x++) {}
-        System.out.println("child: id:" + this.getId() + ", name:" + this.getName());
-    }
-}
