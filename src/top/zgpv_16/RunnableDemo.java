@@ -10,8 +10,8 @@ public class RunnableDemo {
         Thread t2 = new Thread(r, "child2");
         t.start();
         t2.start();
-
-        Thread.sleep(1000);
+        t.join();
+        t2.join();
 
         System.out.println(r.data.length());
     }

@@ -4,8 +4,8 @@ public class ThreadDaemonDemo {
     public static void main(String[] args) {
         ThreadChild t1 = new ThreadChild();
         ThreadChild t2 = new ThreadChild();
-//        t1.setDaemon(true);
-//        t2.setDaemon(true);
+        t1.setDaemon(true);
+        t2.setDaemon(true);
         t1.start();
         t2.start();
 
