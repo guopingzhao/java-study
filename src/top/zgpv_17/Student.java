@@ -1,0 +1,15 @@
+package top.zgpv_17;
+
+public class Student {
+    private static Student student;
+    private Student(){}
+    public static Student getStudent() {
+        if(student == null) {
+            student = new Student();
+        }
+        return student;
+    }
+    public void study() {
+        System.out.println("study");
+    }
+}
